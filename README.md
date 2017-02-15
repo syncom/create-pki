@@ -1,5 +1,13 @@
 # create-pki: a simple script demonstrating how to create a public-key infrastructure for a TLS server
 
+# Dependency
+The script has been tested on Ubuntu (e.g., 16.04 LTS), and  requires 
+OpenSSL be installed. To install OpenSSL on Ubuntu, 
+```
+sudo apt-get install openssl
+```
+
+
 # How to generate a PKI
 
 * Modify the configuration template file `openssl.conf` as needed. 

@@ -56,11 +56,13 @@ openssl req -nodes -newkey rsa:4096 -x509 -extensions v3_ca \
 # An optional company name []:
 #
 
-openssl req -nodes -newkey rsa:2048 -keyout $SERVER_KEY_PATH \
+openssl req -nodes -newkey rsa:2048 -extensions v3_req \
+-keyout $SERVER_KEY_PATH \
 -out $SERVER_CERT_REQUEST_PATH -config ./openssl.cnf
 
 # Sign the certificate request to create TLS server certificate
-openssl ca -out $SERVER_CERT_PATH -config ./openssl.cnf  \
+openssl ca -out $SERVER_CERT_PATH -extensions v3_req \
+-config ./openssl.cnf  \
 -infiles $SERVER_CERT_REQUEST_PATH 
 
 # Output some info

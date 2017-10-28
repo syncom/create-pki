@@ -221,6 +221,8 @@ authorityKeyIdentifier=keyid,issuer
 
 basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+# Uncomment and edit your SAN
+subjectAltName = DNS:<your_subject_alternative_name>
 
 [ v3_ca ]
 

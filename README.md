@@ -13,6 +13,12 @@ sudo apt-get install openssl
 * Modify the configuration template file `openssl.conf` as needed. 
 * Run `./create_pki.sh` to generate a TLS server certificate. Enter requested
   information when prompted.
+* To add a subjectAltName, in [openssl.cnf](./openssl.cnf), under the `[
+  v3_req]` section, uncomment the line
+  ```
+  subjectAltName = DNS:<your_subject_alternative_name>
+  ```
+  and replace the `<your_subject_alternative_name>` with your SAN.
 
 # How to test the server certificate
 
